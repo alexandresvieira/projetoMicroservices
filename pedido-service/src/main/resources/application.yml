@@ -1,0 +1,29 @@
+#spring:
+#  autoconfigure:
+#    exclude:
+#    - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+server:
+  port : 8081
+  servlet: 
+    context-path: /pedido-service
+
+spring:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://DESKTOP\SQLEXPRESS:1433;DatabaseName=Pedido;SelectMethod=cursor;
+    username: sa
+    password: spowgate
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 60
+      minimum-idle: 20
+      pool-name: Pedido
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    show-sql: true
+    properties:
+      hibernate: 
+        format_sql: true
+        ddl-auto: none      
+            

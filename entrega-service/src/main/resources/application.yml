@@ -14,9 +14,12 @@ spring:
 #    url: jdbc:sqlserver://DESKTOP\SQLEXPRESS:1433;DatabaseName=Entrega;SelectMethod=cursor;
 #    username: sa
 #    password: spowgate
-    url: jdbc:sqlserver://10.110.1.97;DatabaseName=Entrega;SelectMethod=cursor;
-    username: workflow
-    password: yasworkflow    
+#    url: jdbc:sqlserver://10.110.1.97;DatabaseName=Entrega;SelectMethod=cursor;
+#    username: workflow
+#    password: yasworkflow
+    url: jdbc:mariadb://localhost:3306;DatabaseName=Entrega;SelectMethod=cursor;
+    username: root
+    password: spowgate    
     hikari:
       idle-timeout: 10000
       maximum-pool-size: 60

@@ -33,18 +33,18 @@ public class PedidoService {
 		
 	}
 	
-	private Integer consultaPrazoEntrega(String uf) {		
+	private Integer consultaPrazoEntrega(String uf) {
 		RestTemplate restTemplate = new RestTemplate();
-		return restTemplate.getForObject("http://localhost:8085/entrega-service/entrega/consultarPrazoEntrega/", Integer.class, uf);
+		return restTemplate.getForObject("http://localhost:8080/entrega-service/entrega/consultarPrazoEntrega/"+uf, Integer.class);
 	}
 
 	public List<Pedido> listarPedidoPorUF(String uf) {
-		return pedidoRepository.findByUf(uf);
+		return pedidoRepository.findByUf(uf.toUpperCase());
 	}
 
 	public Pedido listarPedidoPorId(Integer id) {
 		Optional<Pedido> pedioOptional = pedidoRepository.findById(id);
-		return pedioOptional.orElse(null);  
+		return pedioOptional.orElse(new Pedido());  
 	}
 
 }

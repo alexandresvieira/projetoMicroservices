@@ -17,8 +17,7 @@ public class EntregaService {
 	}
 
 	public Sla consultarPrazoEntrega(String uf) {		
-		return entregaRepository.findByUf(uf);
+		return entregaRepository.findFirstByUfOrderByIdDesc(uf);
 	}
 
 }
-

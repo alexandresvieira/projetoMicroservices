@@ -4,16 +4,19 @@
 #    - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
 server:
-  port : 8081
+  port : 8085
   servlet: 
     context-path: /pedido-service
 
 spring:
   datasource:
     driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://DESKTOP\SQLEXPRESS:1433;DatabaseName=Pedido;SelectMethod=cursor;
-    username: sa
-    password: spowgate
+#    url: jdbc:sqlserver://DESKTOP\SQLEXPRESS:1433;DatabaseName=Pedido;SelectMethod=cursor;
+#    username: sa
+#    password: spowgate
+    url: jdbc:sqlserver://10.110.1.97;DatabaseName=Pedido;SelectMethod=cursor;
+    username: workflow
+    password: yasworkflow
     hikari:
       idle-timeout: 10000
       maximum-pool-size: 60

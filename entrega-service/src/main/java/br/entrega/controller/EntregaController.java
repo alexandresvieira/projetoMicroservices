@@ -27,11 +27,11 @@ public class EntregaController {
 	@ApiImplicitParams({
 		@ApiImplicitParam(dataType = "String",name = "uf" , value = "UF" , required = true),
 		@ApiImplicitParam(dataType = "int",name = "sla" , value = "SLA" , required = true)})
-	public void criarPedido(@RequestParam("uf") String uf, @RequestParam("sla") int sla) {
+	public void alterarPrazoEntrega(@RequestParam("uf") String uf, @RequestParam("sla") int sla) {
 		entregaService.alterarPrazoEntrega(uf, sla);
 	}
 	
-	@GetMapping(path = "consultarPrazoEntrega/{uf}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "consultarPrazoEntrega/{uf}")
 	public @ResponseBody Sla consultarPrazoEntrega(@PathVariable("uf") String uf) {
 		return entregaService.consultarPrazoEntrega(uf);
 	}
